@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ingresos-egresos-app-5d95a": {
+      "hosting": {
+        "ingresoEgresoApp": [
+          "ingresos-egresos-app-5d95a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ingresos-egresos-app-5d95a"
+  }
+}
