@@ -26,8 +26,13 @@ export class RegisterComponent implements OnInit {
   }
 
   crearUsuario(): void {
-    const { nombre, correo, password } = this.formRegister.value;
-    this.authService.crearUsuario(nombre, correo, password);
-    this.router.navigate(['/']);
+    if (this.formRegister.invalid) {
+      this.router.navigate(['/register']);
+      return;
+    } else {
+      const { nombre, correo, password } = this.formRegister.value;
+      this.authService.crearUsuario(nombre, correo, password)
+      this.router.navigate(['/']);
+    }
   }
 }
