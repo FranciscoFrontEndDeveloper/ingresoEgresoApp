@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.sass'],
 })
 export class RegisterComponent implements OnInit {
-  formLogin: FormGroup;
+  formRegister: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.formLogin = this.formBuilder.group({
+    this.formRegister = this.formBuilder.group({
       nombre: ['', Validators.required],
       correo: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   }
 
   crearUsuario(): void {
-    const { nombre, correo, password } = this.formLogin.value;
+    const { nombre, correo, password } = this.formRegister.value;
     this.authService.crearUsuario(nombre, correo, password);
     this.router.navigate(['/']);
   }

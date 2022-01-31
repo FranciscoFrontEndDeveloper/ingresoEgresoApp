@@ -13,4 +13,13 @@ export class AuthService {
       console.log(error);
     })
   }
+
+  loguearUsuario(correo: string, password: string) {
+    this.angularFireAuth.signInWithEmailAndPassword(correo, password).then((credenciales) => {
+      console.log(credenciales);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
 }
